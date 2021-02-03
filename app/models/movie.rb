@@ -14,7 +14,7 @@ class Movie < ActiveRecord::Base
     @ratings_to_show = ratings_to_show
   end
   
-  def self.with_rating(rating)
+  def self.with_ratings(rating)
     return Movie.all
   end
 end
