@@ -10,6 +10,8 @@ class MoviesController < ApplicationController
     @all_ratings = Movie.all_ratings
     if params.has_key?(:ratings)
       @ratings_list = params[:ratings]
+    else
+      @ratings_list = nil
     #else
      # if !@ratings_to_show.nil?
      #   @ratings_to_show.each do |rating|
@@ -17,8 +19,14 @@ class MoviesController < ApplicationController
      #   end
      # end
     end
+    session[:ratings_list] = @ratings_list
     @ratings_to_show = Movie.ratings_to_show
-    @sort_by = params[:sort_by]
+    if params.has_key?(:sort_by)
+      @sort_by = params[:sort_by]
+    else
+      @sort_by = ''
+    end
+    session[:sort_by] = @sort_by
     @movies = Movie.with_ratings(@ratings_list, @sort_by)
   end
 
