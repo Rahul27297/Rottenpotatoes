@@ -14,9 +14,9 @@ class Movie < ActiveRecord::Base
     @ratings_to_show = ratings_to_show
   end
   
-  def self.with_ratings(rating)
-    #ratings_to_show.clear
-    #if rating.nil?
+  def self.with_ratings(ratings_list)
+    ratings_to_show.clear
+    if ratings_list.nil?
       return Movie.all
     #else
      # ratings_list = []
