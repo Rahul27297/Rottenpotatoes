@@ -15,9 +15,10 @@ class Movie < ActiveRecord::Base
   end
   
   def self.with_ratings(ratings_list)
-    ratings_to_show.clear
+    seratings_to_show.clear
     if ratings_list.nil?
       return Movie.all
+    end
     #else
      # ratings_list = []
      # (rating.keys).each do |key|
