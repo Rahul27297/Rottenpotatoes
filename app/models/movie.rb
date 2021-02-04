@@ -24,7 +24,7 @@ class Movie < ActiveRecord::Base
         ratings_to_show.append(k)
         ratings_list_keys.append(k)
       end
-      return Movie.where("Rating")
+      return Movie.where("rating = G")
     end
   end
 end
