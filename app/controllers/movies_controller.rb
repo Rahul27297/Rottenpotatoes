@@ -9,7 +9,7 @@ class MoviesController < ApplicationController
   def index
     @all_ratings = Movie.all_ratings
     @ratings_to_show = Movie.ratings_to_show
-    ratings = params[:ratings]
+    ratings_lis = params[:ratings]
     @movies = Movie.with_ratings(ratings)
   end
 
