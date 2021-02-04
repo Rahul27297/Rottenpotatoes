@@ -19,13 +19,12 @@ class Movie < ActiveRecord::Base
     if ratings_list.nil?
       return Movie.all
     else
-      ratings_list = []
-      puts(ratings_list)
-     # (rating.keys).each do |key|
-     #   ratings_to_show.append(key)
-     #   ratings_list.append(key)
-     # end
-     # return Movie.where({Rating: ratings_list})
+      ratings_list_keys = []
+      (ratings_list.keys).each do |k|
+        ratings_to_show.append(k)
+        ratings_list_keys.append(k)
+      end
+      return Movie.where({Rating: ratings_list_keys})
     end
   end
 end
