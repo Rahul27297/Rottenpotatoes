@@ -18,14 +18,14 @@ class Movie < ActiveRecord::Base
     ratings_to_show.clear
     if ratings_list.nil?
       return Movie.all
-    end
-    #else
-     # ratings_list = []
+    else
+      ratings_list = []
+      puts(ratings_list)
      # (rating.keys).each do |key|
      #   ratings_to_show.append(key)
      #   ratings_list.append(key)
      # end
      # return Movie.where({Rating: ratings_list})
-    #end
+    end
   end
 end
