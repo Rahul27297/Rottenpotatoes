@@ -16,7 +16,7 @@ class Movie < ActiveRecord::Base
   
   def self.with_ratings(rating)
     #ratings_to_show.clear
-    if rating.nil?
+    #if rating.nil?
       return Movie.all
     #else
      # ratings_list = []
@@ -25,6 +25,6 @@ class Movie < ActiveRecord::Base
      #   ratings_list.append(key)
      # end
      # return Movie.where({Rating: ratings_list})
-    end
+    #end
   end
 end
